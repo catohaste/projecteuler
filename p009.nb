@@ -1,0 +1,142 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4149,        134]
+NotebookOptionsPosition[      3644,        111]
+NotebookOutlinePosition[      3998,        127]
+CellTagsIndexPosition[      3955,        124]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<A Pythagorean triplet is a set of three natural numbers, a \
+< b < c, for which,\n\n\t\t\t\t\t\t\t\ta^2 + b^2 = c^2\nFor example, 3^2 + \
+4^2 = 9 + 16 = 25 = 5^2.\n\nThere exists exactly one Pythagorean triplet for \
+which a + b + c = 1000.\nFind the product abc.\>\""], "Input",
+ CellChangeTimes->{{3.697556682459429*^9, 3.6975567153726587`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", " ", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "1", ",", "1000"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", "1", ",", "1000"}], "}"}]}], "]"}], ",", "1"}], 
+      "]"}], ",", 
+     RowBox[{
+      RowBox[{"IntegerQ", "[", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}], "]"}], 
+      "&"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.686652119630087*^9, 3.6866521227875957`*^9}, {
+   3.6866521813461237`*^9, 3.686652190872752*^9}, {3.686652255127784*^9, 
+   3.686652260470851*^9}, 3.686652297869272*^9, {3.686652404039798*^9, 
+   3.6866524061836433`*^9}, {3.686652436887233*^9, 3.686652483708424*^9}, {
+   3.686652515052129*^9, 3.686652517387022*^9}, {3.686652741338396*^9, 
+   3.686652799407775*^9}, {3.686652841837976*^9, 3.686652901646905*^9}, {
+   3.6866531355373793`*^9, 3.6866534735387917`*^9}, {3.686653599589349*^9, 
+   3.686653621348012*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"x", ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "+", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "+", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], "+", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "^", "2"}]}], "]"}]}], "\[Equal]", 
+     "1000"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686653239701398*^9, 3.686653262708198*^9}, {
+  3.68665349313717*^9, 3.686653583342527*^9}, {3.686653664619418*^9, 
+  3.686653665842062*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"200", ",", "375"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"375", ",", "200"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.686653586390873*^9, 3.686653668511888*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sqrt", "[", 
+   RowBox[{
+    RowBox[{"200", "^", "2"}], " ", "+", 
+    RowBox[{"375", "^", "2"}]}], "]"}], "*", "200", "*", "375"}]], "Input",
+ CellChangeTimes->{{3.686653687766485*^9, 3.6866537586711683`*^9}}],
+
+Cell[BoxData["31875000"], "Output",
+ CellChangeTimes->{3.686653731664713*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{60, Automatic}, {Automatic, 23}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 365, 4, 159, "Input"],
+Cell[926, 26, 1355, 34, 54, "Input"],
+Cell[CellGroupData[{
+Cell[2306, 64, 714, 21, 32, "Input"],
+Cell[3023, 87, 243, 7, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3303, 99, 245, 6, 32, "Input"],
+Cell[3551, 107, 77, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
