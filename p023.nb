@@ -10,15 +10,35 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4610,        148]
-NotebookOptionsPosition[      4026,        123]
-NotebookOutlinePosition[      4381,        139]
-CellTagsIndexPosition[      4338,        136]
+NotebookDataLength[      7161,        183]
+NotebookOptionsPosition[      6534,        157]
+NotebookOutlinePosition[      6889,        173]
+CellTagsIndexPosition[      6846,        170]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
+ RowBox[{"\"\<A perfect number is a number for which the sum of its proper \
+divisors is exactly equal to the number. For example the sum of the proper \
+divisors of 28 would be 1+2+4+7+14=28, which means that 28 is a perfect \
+number.\[IndentingNewLine]\[IndentingNewLine]A number n is called deficient \
+if the sum of its proper divisors is less than n and it is called abundant if \
+this sum exceeds n.\[IndentingNewLine]\[IndentingNewLine]As 12 is the \
+smallest abundant number, 1+2+3+4+6=16, the smallest number that can be \
+written as the sum of two abundant numbers is 24. By mathematical analysis, \
+it can be shown that all integers greater than 28123 can be written as the \
+sum of two abundant numbers. However, this upper limit cannot be reduced any \
+further by analysis even though it is known that the greatest number that \
+cannot be expressed as the sum of two abundant numbers is less than this \
+limit.\n\[IndentingNewLine]Find the sum of all the positive integers which \
+cannot be written as the sum of two abundant numbers.\>\"", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.697551030066077*^9, 3.697551363671824*^9}, {
+  3.697551774211733*^9, 3.697551784729638*^9}}],
+
+Cell[BoxData[{"\"\<Find all the abundant numbers under 27180.\>\"", "\
+\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"abund", " ", "=", " ", 
    RowBox[{"Select", "[", 
@@ -29,13 +49,14 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"Total", "[", 
          RowBox[{"Divisors", "[", "#", "]"}], "]"}], "-", "#"}], ">", "#"}], 
-      "&"}]}], "]"}]}], ";"}]], "Input",
+      "&"}]}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.697275782750071*^9, 3.697275795389296*^9}, {
    3.697275968137912*^9, 3.697275972135644*^9}, 3.697276092652327*^9, {
    3.697276203702375*^9, 3.697276204913837*^9}, {3.69727631266535*^9, 
-   3.697276317051162*^9}}],
+   3.697276317051162*^9}, {3.6975513911882553`*^9, 3.697551417282847*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{"\"\<Find all possible sums of these abumdant numbers.\>\"", "\
+\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"x", " ", "=", " ", 
    RowBox[{"Map", "[", 
@@ -47,13 +68,15 @@ Cell[BoxData[
        RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
       "&"}], ",", 
      RowBox[{"Tuples", "[", 
-      RowBox[{"abund", ",", "2"}], "]"}]}], "]"}]}], ";"}]], "Input",
+      RowBox[{"abund", ",", "2"}], "]"}]}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.6972758075739727`*^9, 3.6972758823655252`*^9}, {
    3.697275934849722*^9, 3.697275935841783*^9}, 3.6972759774251347`*^9, {
    3.697276033195879*^9, 3.697276036874645*^9}, {3.697276441338917*^9, 
-   3.6972764419465322`*^9}, {3.697277661912498*^9, 3.697277670095724*^9}}],
+   3.6972764419465322`*^9}, {3.697277661912498*^9, 3.697277670095724*^9}, {
+   3.69755143153295*^9, 3.697551447617076*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{"\"\<Delete any duplicates, sort them and then select all sums \
+under 28123.\>\"", "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"y", " ", "=", " ", 
    RowBox[{"Select", "[", 
@@ -61,16 +84,20 @@ Cell[BoxData[
      RowBox[{"Sort", "[", 
       RowBox[{"DeleteDuplicates", "[", "x", "]"}], "]"}], ",", 
      RowBox[{
-      RowBox[{"#", "<=", "28123"}], "&"}]}], "]"}]}], ";"}]], "Input",
+      RowBox[{"#", "<=", "28123"}], "&"}]}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.6972764493289213`*^9, 3.697276464380109*^9}, {
    3.69727659807262*^9, 3.697276611276867*^9}, {3.697277336458946*^9, 
    3.697277351890634*^9}, {3.697277593357703*^9, 3.697277631539425*^9}, {
    3.697277706031919*^9, 3.697277710336279*^9}, {3.697277774876006*^9, 
-   3.697277844981574*^9}, 3.697279293233831*^9}],
+   3.697277844981574*^9}, 3.697279293233831*^9, {3.697551452103011*^9, 
+   3.697551488374002*^9}}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{"\"\<From this list, we seek the largest number, for which the \
+number + 1 is not also a member of the list.\nThis is obviously true for the \
+last number, as the number + 1 cannot be part of the list by construction, so \
+this number is ignored.\>\"", "\[IndentingNewLine]", 
  RowBox[{"Max", "[", 
   RowBox[{"Drop", "[", 
    RowBox[{
@@ -81,10 +108,11 @@ Cell[BoxData[
         RowBox[{"MemberQ", "[", 
          RowBox[{"y", ",", 
           RowBox[{"#", "+", "1"}]}], " ", "]"}]}], "&"}]}], "]"}], ",", 
-    RowBox[{"-", "1"}]}], "]"}], "]"}]], "Input",
+    RowBox[{"-", "1"}]}], "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.69727783997549*^9, 3.697277918357005*^9}, {
-  3.697279003660088*^9, 3.697279010637844*^9}, {3.697279066341337*^9, 
-  3.697279091176454*^9}}],
+   3.697279003660088*^9, 3.697279010637844*^9}, {3.697279066341337*^9, 
+   3.697279091176454*^9}, 3.697551497765932*^9, {3.697551539444187*^9, 
+   3.697551649673667*^9}}],
 
 Cell[BoxData["20160"], "Output",
  CellChangeTimes->{
@@ -92,18 +120,23 @@ Cell[BoxData["20160"], "Output",
    3.69727909958447*^9}, 3.697279334588675*^9}]
 }, Open  ]],
 
-Cell[BoxData[
+Cell[BoxData[{"\"\<We now select all the numbers below our threshold. This \
+gives a list of all the numbers below the threshold which can be written as \
+the sum of two abundant numbers.\>\"", "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Select", "[", 
    RowBox[{"y", ",", 
     RowBox[{
-     RowBox[{"#", "<=", "20161"}], "&"}]}], "]"}], ";"}]], "Input",
+     RowBox[{"#", "<=", "20161"}], "&"}]}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.6972791672401743`*^9, 3.6972791825709753`*^9}, {
-   3.697279214642171*^9, 3.697279219252543*^9}, 3.697279298378883*^9}],
+   3.697279214642171*^9, 3.697279219252543*^9}, 3.697279298378883*^9, {
+   3.697551671055162*^9, 3.6975517579039583`*^9}}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{"\"\<We now find the complement the above set, and sum over it. \
+This then gives us the sum of all numbers which cannot be written as the sum \
+of two abundant numbers.\>\"", "\[IndentingNewLine]", 
  RowBox[{"Total", "[", 
   RowBox[{"Complement", "[", 
    RowBox[{
@@ -111,18 +144,19 @@ Cell[BoxData[
     RowBox[{"Select", "[", 
      RowBox[{"y", ",", 
       RowBox[{
-       RowBox[{"#", "<=", "20161"}], "&"}]}], "]"}]}], "]"}], "]"}]], "Input",\
+       RowBox[{"#", "<=", "20161"}], "&"}]}], "]"}]}], "]"}], "]"}]}], "Input",\
 
  CellChangeTimes->{{3.697279124743002*^9, 3.697279144967903*^9}, {
-  3.697279228364016*^9, 3.6972792488342667`*^9}}],
+  3.697279228364016*^9, 3.6972792488342667`*^9}, {3.697551760532222*^9, 
+  3.697551839107871*^9}}],
 
 Cell[BoxData["4179871"], "Output",
  CellChangeTimes->{{3.6972792413520193`*^9, 3.6972792492912207`*^9}, 
    3.6972793416743*^9}]
 }, Open  ]]
 },
-WindowSize->{808, 755},
-WindowMargins->{{Automatic, 165}, {37, Automatic}},
+WindowSize->{970, 755},
+WindowMargins->{{Automatic, 136}, {45, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -138,17 +172,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 579, 15, 32, "Input"],
-Cell[1140, 37, 699, 16, 32, "Input"],
-Cell[1842, 55, 605, 13, 32, "Input"],
+Cell[558, 20, 1220, 17, 327, "Input"],
+Cell[1781, 39, 708, 16, 54, "Input"],
+Cell[2492, 57, 836, 18, 54, "Input"],
+Cell[3331, 77, 764, 15, 54, "Input"],
 Cell[CellGroupData[{
-Cell[2472, 72, 506, 14, 32, "Input"],
-Cell[2981, 88, 172, 3, 32, "Output"]
+Cell[4120, 96, 859, 18, 96, "Input"],
+Cell[4982, 116, 172, 3, 32, "Output"]
 }, Open  ]],
-Cell[3168, 94, 294, 7, 32, "Input"],
+Cell[5169, 122, 551, 10, 75, "Input"],
 Cell[CellGroupData[{
-Cell[3487, 105, 392, 11, 32, "Input"],
-Cell[3882, 118, 128, 2, 32, "Output"]
+Cell[5745, 136, 642, 14, 75, "Input"],
+Cell[6390, 152, 128, 2, 32, "Output"]
 }, Open  ]]
 }
 ]
