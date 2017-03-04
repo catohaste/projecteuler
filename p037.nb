@@ -10,14 +10,23 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5941,        177]
-NotebookOptionsPosition[      5064,        143]
-NotebookOutlinePosition[      5418,        159]
-CellTagsIndexPosition[      5375,        156]
+NotebookDataLength[      6521,        187]
+NotebookOptionsPosition[      5603,        152]
+NotebookOutlinePosition[      5957,        168]
+CellTagsIndexPosition[      5914,        165]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData["\"\<The number 3797 has an interesting property. Being prime \
+itself, it is possible to continuously remove digits from left to right, and \
+remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from \
+right to left: 3797, 379, 37, and 3.\n\nFind the sum of the only eleven \
+primes that are both truncatable from left to right and right to left.\n\n\
+NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.\>\""], \
+"Input",
+ CellChangeTimes->{{3.697600212500536*^9, 3.6976002255866137`*^9}}],
+
 Cell[BoxData[
  RowBox[{"ClearAll", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
@@ -158,26 +167,27 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 162, 3, 32, "Input"],
+Cell[558, 20, 536, 7, 201, "Input"],
+Cell[1097, 29, 162, 3, 32, "Input"],
 Cell[CellGroupData[{
-Cell[745, 27, 2326, 55, 138, "Input"],
+Cell[1284, 36, 2326, 55, 138, "Input"],
 Cell[CellGroupData[{
-Cell[3096, 86, 139, 2, 24, "Print"],
-Cell[3238, 90, 141, 2, 24, "Print"],
-Cell[3382, 94, 141, 2, 24, "Print"],
-Cell[3526, 98, 141, 2, 24, "Print"],
-Cell[3670, 102, 142, 2, 24, "Print"],
-Cell[3815, 106, 142, 2, 24, "Print"],
-Cell[3960, 110, 142, 2, 24, "Print"],
-Cell[4105, 114, 142, 2, 24, "Print"],
-Cell[4250, 118, 145, 2, 24, "Print"],
-Cell[4398, 122, 142, 2, 24, "Print"],
-Cell[4543, 126, 147, 2, 24, "Print"]
+Cell[3635, 95, 139, 2, 24, "Print"],
+Cell[3777, 99, 141, 2, 24, "Print"],
+Cell[3921, 103, 141, 2, 24, "Print"],
+Cell[4065, 107, 141, 2, 24, "Print"],
+Cell[4209, 111, 142, 2, 24, "Print"],
+Cell[4354, 115, 142, 2, 24, "Print"],
+Cell[4499, 119, 142, 2, 24, "Print"],
+Cell[4644, 123, 142, 2, 24, "Print"],
+Cell[4789, 127, 145, 2, 24, "Print"],
+Cell[4937, 131, 142, 2, 24, "Print"],
+Cell[5082, 135, 147, 2, 24, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4739, 134, 231, 3, 32, "Input"],
-Cell[4973, 139, 75, 1, 32, "Output"]
+Cell[5278, 143, 231, 3, 32, "Input"],
+Cell[5512, 148, 75, 1, 32, "Output"]
 }, Open  ]]
 }
 ]

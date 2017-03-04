@@ -10,16 +10,22 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5578,        199]
-NotebookOptionsPosition[      4820,        166]
-NotebookOutlinePosition[      5172,        182]
-CellTagsIndexPosition[      5129,        179]
+NotebookDataLength[      5946,        206]
+NotebookOptionsPosition[      5151,        172]
+NotebookOutlinePosition[      5503,        188]
+CellTagsIndexPosition[      5460,        185]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData["\"\<145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = \
+145.\n\nFind the sum of all numbers which are equal to the sum of the \
+factorial of their digits.\n\nNote: as 1! = 1 and 2! = 2 are not sums they \
+are not included.\>\""], "Input",
+ CellChangeTimes->{{3.6976000997105207`*^9, 3.697600151344614*^9}}],
 
 Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"Select", "[", 
   RowBox[{
@@ -181,29 +187,28 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 328, 4, 117, "Input"],
 Cell[CellGroupData[{
-Cell[580, 22, 856, 24, 54, "Input"],
-Cell[1439, 48, 135, 3, 32, "Output"]
+Cell[911, 28, 856, 24, 54, "Input"],
+Cell[1770, 54, 135, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1611, 56, 836, 24, 54, "Input"],
-Cell[2450, 82, 193, 5, 32, "Output"]
+Cell[1942, 62, 836, 24, 54, "Input"],
+Cell[2781, 88, 193, 5, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2680, 92, 789, 23, 54, "Input"],
-Cell[3472, 117, 115, 2, 32, "Output"]
+Cell[3011, 98, 789, 23, 54, "Input"],
+Cell[3803, 123, 115, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3624, 124, 791, 23, 75, "Input"],
-Cell[4418, 149, 147, 4, 32, "Output"]
+Cell[3955, 130, 791, 23, 75, "Input"],
+Cell[4749, 155, 147, 4, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4602, 158, 123, 2, 32, "Input"],
-Cell[4728, 162, 76, 1, 32, "Output"]
+Cell[4933, 164, 123, 2, 32, "Input"],
+Cell[5059, 168, 76, 1, 32, "Output"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

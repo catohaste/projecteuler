@@ -10,14 +10,24 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8230,        232]
-NotebookOptionsPosition[      7717,        209]
-NotebookOutlinePosition[      8071,        225]
-CellTagsIndexPosition[      8028,        222]
+NotebookDataLength[      8927,        243]
+NotebookOptionsPosition[      8376,        219]
+NotebookOutlinePosition[      8730,        235]
+CellTagsIndexPosition[      8687,        232]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData["\"\<The fraction 49/98 is a curious fraction, as an \
+inexperienced mathematician in attempting to simplify it may incorrectly \
+believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.\
+\n\nWe shall consider fractions like, 30/50 = 3/5, to be trivial examples.\n\n\
+There are exactly four non-trivial examples of this type of fraction, less \
+than one in value, and containing two digits in the numerator and \
+denominator.\n\nIf the product of these four fractions is given in its lowest \
+common terms, find the value of the denominator.\>\""], "Input",
+ CellChangeTimes->{{3.69760004874606*^9, 3.697600075396295*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"x", " ", "=", 
@@ -224,15 +234,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1170, 30, 54, "Input"],
-Cell[1731, 52, 3835, 85, 138, "Input"],
+Cell[558, 20, 656, 8, 243, "Input"],
+Cell[1217, 30, 1170, 30, 54, "Input"],
+Cell[2390, 62, 3835, 85, 138, "Input"],
 Cell[CellGroupData[{
-Cell[5591, 141, 750, 17, 32, "Input"],
-Cell[6344, 160, 860, 29, 49, "Output"]
+Cell[6250, 151, 750, 17, 32, "Input"],
+Cell[7003, 170, 860, 29, 49, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7241, 194, 290, 7, 32, "Input"],
-Cell[7534, 203, 167, 3, 49, "Output"]
+Cell[7900, 204, 290, 7, 32, "Input"],
+Cell[8193, 213, 167, 3, 49, "Output"]
 }, Open  ]]
 }
 ]
