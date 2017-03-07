@@ -1,0 +1,256 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9652,        246]
+NotebookOptionsPosition[      9133,        224]
+NotebookOutlinePosition[      9487,        240]
+CellTagsIndexPosition[      9444,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<In the 20\[Times]20 grid below, four numbers along a \
+diagonal line have been marked in red.\n\nThe product of these numbers is 26 \
+\[Times] 63 \[Times] 78 \[Times] 14 = 1788696.\n\nWhat is the greatest \
+product of four adjacent numbers in the same direction (up, down, left, \
+right, or diagonally) in the 20\[Times]20 grid?\>\""], "Input",
+ CellChangeTimes->{{3.69790835653587*^9, 3.6979083588389893`*^9}, {
+  3.697908440121207*^9, 3.69790845504401*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "data", "=", 
+   "\"\<08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\n49 49 99 \
+40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00\n81 49 31 73 55 79 14 29 \
+93 71 40 67 53 88 30 03 49 13 36 65\n52 70 95 23 04 60 11 42 69 24 68 56 01 \
+32 56 71 37 02 36 91\n22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 \
+13 80\n24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50\n32 98 81 \
+28 64 23 67 10 \!\(\*
+StyleBox[\"26\",
+FontColor->RGBColor[1, 0, 0]]\) 38 40 67 59 54 70 66 18 38 64 70\n67 26 20 68 \
+02 62 12 20 95 \!\(\*
+StyleBox[\"63\",
+FontColor->RGBColor[1, 0, 0]]\) 94 39 63 08 40 91 66 49 94 21\n24 55 58 05 66 \
+73 99 26 97 17 \!\(\*
+StyleBox[\"78\",
+FontColor->RGBColor[1, 0, 0]]\) 78 96 83 14 88 34 89 63 72\n21 36 23 09 75 00 \
+76 44 20 45 35 \!\(\*
+StyleBox[\"14\",
+FontColor->RGBColor[1, 0, 0]]\) 00 61 33 97 34 31 33 95\n78 17 53 28 22 75 31 \
+67 15 94 03 80 04 62 16 14 09 53 56 92\n16 39 05 42 96 35 31 47 55 58 88 24 \
+00 17 54 24 36 29 85 57\n86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 \
+54 17 58\n19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40\n04 52 \
+08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66\n88 36 68 87 57 62 20 \
+72 03 46 33 67 46 55 12 32 63 93 53 69\n04 42 16 73 38 25 39 11 24 94 72 18 \
+08 46 29 32 40 62 76 36\n20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 \
+04 36 16\n20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\n01 70 \
+54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48\>\""}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.687202679120801*^9, 3.6872027341997957`*^9}, 
+   3.687202798485948*^9, 3.687202863795087*^9, {3.6872030758582163`*^9, 
+   3.687203082889461*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dataEdit", " ", "=", " ", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"ToExpression", "[", 
+      RowBox[{"StringSplit", "[", "data", "]"}], "]"}], ",", "20"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6872028731865063`*^9, 3.687202913872224*^9}, {
+   3.6872030541226463`*^9, 3.687203088144164*^9}, {3.68720327791325*^9, 
+   3.6872033182141943`*^9}, {3.687203374100575*^9, 3.6872033965866137`*^9}, {
+   3.687203445058902*^9, 3.687203488023345*^9}, {3.68720355231698*^9, 
+   3.687203558291944*^9}, {3.687203753933489*^9, 3.687203755243053*^9}, {
+   3.687203992344923*^9, 3.6872040911408567`*^9}, {3.687260761407908*^9, 
+   3.687260798453292*^9}, {3.687260835317018*^9, 3.687260836507674*^9}, 
+   3.6872620258726*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"start", "=", " ", 
+   RowBox[{"SortBy", "[", 
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"Permutations", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", "17", "]"}], ",", 
+         RowBox[{"{", "2", "}"}]}], "]"}], ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "x"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "17"}], "}"}]}], "]"}]}], "]"}], ",", "First"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6872037568676233`*^9, 3.6872038102967167`*^9}, {
+   3.6872038427355947`*^9, 3.6872038428552017`*^9}, {3.6872042372623863`*^9, 
+   3.6872042382392397`*^9}, {3.6872045951916523`*^9, 3.687204601534731*^9}, 
+   3.687204838372425*^9, {3.687204878531765*^9, 3.6872049632710752`*^9}, {
+   3.6872050243742437`*^9, 3.687205069514456*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"moves", " ", "=", " ", 
+  RowBox[{"Union", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "start", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], "+", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "0"}], "}"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"Length", "[", "start", "]"}]}], "}"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", "\t\t", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "start", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], "+", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "i"}], "}"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"Length", "[", "start", "]"}]}], "}"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", "\t\t\t", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "start", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], "+", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "i"}], "}"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"Length", "[", "start", "]"}]}], "}"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", "\t\t\t\t", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "start", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], "+", 
+         RowBox[{"{", 
+          RowBox[{"3", ",", "0"}], "}"}], " ", "+", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "i"}], ",", "i"}], "}"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"Length", "[", "start", "]"}]}], "}"}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t\t\t"}]}], "Input",
+ CellChangeTimes->{{3.687204240703537*^9, 3.687204342593697*^9}, {
+   3.687204500347781*^9, 3.68720458406665*^9}, 3.687204774055962*^9, {
+   3.687258983277895*^9, 3.687258986252116*^9}, {3.6872590272204933`*^9, 
+   3.687259042985664*^9}, {3.687259089136853*^9, 3.68725913956579*^9}, {
+   3.687259198697071*^9, 3.687259218995069*^9}, {3.687259254338142*^9, 
+   3.687259338421337*^9}, {3.687260531722478*^9, 3.687260547864853*^9}, 
+   3.6872608607962303`*^9, {3.687261639306509*^9, 3.6872617193979807`*^9}, {
+   3.687261752316635*^9, 3.68726184756881*^9}, {3.687262039649379*^9, 
+   3.687262057281447*^9}, 3.687262122900955*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Max", "[", 
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Apply", "[", "\[IndentingNewLine]", 
+     RowBox[{"Times", ",", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"dataEdit", "\[LeftDoubleBracket]", 
+         RowBox[{
+          RowBox[{"moves", "\[LeftDoubleBracket]", 
+           RowBox[{"x", ",", "y", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          
+          RowBox[{"moves", "\[LeftDoubleBracket]", 
+           RowBox[{"x", ",", "y", ",", "2"}], "\[RightDoubleBracket]"}]}], 
+         "\[RightDoubleBracket]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"Length", "[", 
+           RowBox[{
+           "moves", "\[LeftDoubleBracket]", "x", "\[RightDoubleBracket]"}], 
+           "]"}]}], "}"}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"Length", "[", "moves", "]"}]}], "}"}]}], "]"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.6872604650537863`*^9, 3.687260493306589*^9}, 
+   3.687260731569289*^9, {3.687260787350799*^9, 3.687260883249796*^9}, {
+   3.687260922329109*^9, 3.6872609602703733`*^9}, {3.687261117944524*^9, 
+   3.6872611225356827`*^9}, {3.687261200996893*^9, 3.687261201331819*^9}, {
+   3.687261245362091*^9, 3.687261253449624*^9}, {3.687261316566957*^9, 
+   3.687261376798314*^9}, {3.687261434771029*^9, 3.6872614884005938`*^9}, {
+   3.687261522047449*^9, 3.687261620306123*^9}, {3.687261861776628*^9, 
+   3.687261907022646*^9}, {3.687261947109064*^9, 3.6872619935859137`*^9}, {
+   3.6872621429396467`*^9, 3.6872621494192944`*^9}}],
+
+Cell[BoxData["70600674"], "Output",
+ CellChangeTimes->{{3.687261986750108*^9, 3.687261994064205*^9}, {
+  3.687262140529481*^9, 3.6872621496392107`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{36, Automatic}, {16, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 477, 6, 138, "Input"],
+Cell[1038, 28, 1716, 32, 432, "Input"],
+Cell[2757, 62, 773, 15, 32, "Input"],
+Cell[3533, 79, 889, 22, 32, "Input"],
+Cell[4425, 103, 2915, 76, 117, "Input"],
+Cell[CellGroupData[{
+Cell[7365, 183, 1597, 34, 96, "Input"],
+Cell[8965, 219, 152, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

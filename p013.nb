@@ -1,0 +1,92 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2605,         84]
+NotebookOptionsPosition[      2104,         61]
+NotebookOutlinePosition[      2458,         77]
+CellTagsIndexPosition[      2415,         74]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<Work out the first ten digits of the sum of the one-hundred \
+50-digit numbers saved in file 'p013data.txt'.\>\""], "Input",
+ CellChangeTimes->{{3.697908901945312*^9, 3.69790893878898*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6979097185161343`*^9, 3.6979097231860437`*^9}}],
+
+Cell[BoxData["\<\"/Users/clhastings/Documents/Drive/projecteuler\"\>"], \
+"Output",
+ CellChangeTimes->{{3.697909711060009*^9, 3.697909723464731*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tmp", " ", "=", " ", 
+   RowBox[{"ReadList", "[", 
+    RowBox[{"OpenRead", "[", "\"\<p013data.txt\>\"", "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.687183211580694*^9, 3.6871832485434437`*^9}, {
+   3.687183314286063*^9, 3.687183317508834*^9}, {3.6871833629724703`*^9, 
+   3.68718337089027*^9}, {3.6871834670925817`*^9, 3.6871834737019653`*^9}, 
+   3.687183535045208*^9, {3.687778442751936*^9, 3.68777844408687*^9}, 
+   3.687778492869918*^9, {3.697909297580173*^9, 3.697909301374309*^9}, {
+   3.697909408936582*^9, 3.69790945089187*^9}, {3.697912254814694*^9, 
+   3.697912255764282*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", "tmp", "]"}]], "Input",
+ CellChangeTimes->{{3.687183542580233*^9, 3.687183549082439*^9}}],
+
+Cell[BoxData["5537376230390876637302048746832985971773659831892672"], "Output",
+ CellChangeTimes->{3.687183549619316*^9, 3.687778376479764*^9, 
+  3.697912257942403*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{68, Automatic}, {Automatic, 44}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 207, 2, 54, "Input"],
+Cell[CellGroupData[{
+Cell[790, 26, 174, 3, 32, "Input"],
+Cell[967, 31, 149, 2, 32, "Output"]
+}, Open  ]],
+Cell[1131, 36, 635, 12, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1791, 52, 126, 2, 32, "Input"],
+Cell[1920, 56, 168, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+

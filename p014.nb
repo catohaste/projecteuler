@@ -1,0 +1,200 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6981,        192]
+NotebookOptionsPosition[      6321,        165]
+NotebookOutlinePosition[      6675,        181]
+CellTagsIndexPosition[      6632,        178]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<The following iterative sequence is defined for the set of \
+positive integers:\n\n\t\t\t\t\t\t\t\tn \[RightArrow] n/2 (n is even)\n\t\t\t\
+\t\t\t\t\tn \[RightArrow] 3n + 1 (n is odd)\n\nUsing the rule above and \
+starting with 13, we generate the following sequence:\n\n13 \[RightArrow] 40 \
+\[RightArrow] 20 \[RightArrow] 10 \[RightArrow] 5 \[RightArrow] 16 \
+\[RightArrow] 8 \[RightArrow] 4 \[RightArrow] 2 \[RightArrow] 1\nIt can be \
+seen that this sequence (starting at 13 and finishing at 1) contains 10 \
+terms. Although it has not been proved yet (Collatz Problem), it is thought \
+that all starting numbers finish at 1.\n\nWhich starting number, under one \
+million, produces the longest chain?\n\nNOTE: Once the chain starts the terms \
+are allowed to go above one million.\>\""], "Input",
+ CellChangeTimes->{{3.697909039943386*^9, 3.697909073166997*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "[", "foo_", "]"}], ":=", " ", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"EvenQ", "[", "foo", "]"}], ",", 
+    RowBox[{"foo", "/", "2"}], ",", 
+    RowBox[{
+     RowBox[{"3", "*", "foo"}], "+", "1"}]}], "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestWhileList", "[", 
+  RowBox[{"y", ",", "13", ",", 
+   RowBox[{
+    RowBox[{"#", "!=", "1"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.687622754731358*^9, 3.6876228245631123`*^9}, {
+   3.687623107276479*^9, 3.687623143763184*^9}, {3.6876231942567797`*^9, 
+   3.687623326716365*^9}, 3.687623634965098*^9, {3.687623706883831*^9, 
+   3.687623717609725*^9}, {3.687623757920061*^9, 3.6876237593749113`*^9}, {
+   3.687623791177589*^9, 3.687623792028331*^9}, {3.687623826523611*^9, 
+   3.6876238300871687`*^9}, {3.687623869052706*^9, 3.687623973216466*^9}, {
+   3.687624148487967*^9, 3.687624152055173*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "13", ",", "40", ",", "20", ",", "10", ",", "5", ",", "16", ",", "8", ",", 
+   "4", ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.687623144999152*^9, {3.687623221398676*^9, 3.687623282797344*^9}, 
+   3.68762371834779*^9, {3.687623759922428*^9, 3.687623798458935*^9}, 
+   3.687623830930311*^9, 3.687623871309409*^9, {3.6876239528906612`*^9, 
+   3.687623974145422*^9}, {3.6876241527952023`*^9, 3.687624218645609*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{"Timing", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"NestWhileList", "[", 
+       RowBox[{"y", ",", "i", ",", 
+        RowBox[{
+         RowBox[{"#", "!=", "1"}], "&"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1000000"}], "}"}]}], "]"}], "]"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.6876245497637672`*^9, 3.687624553985474*^9}, {
+   3.687628043095273*^9, 3.687628045881123*^9}, {3.687628144609572*^9, 
+   3.687628171022341*^9}, {3.6876282018334227`*^9, 3.687628208384828*^9}, 
+   3.687628246668453*^9, {3.687628317910336*^9, 3.6876283275339937`*^9}, {
+   3.687638708658372*^9, 3.6876387130711393`*^9}, {3.687639386205743*^9, 
+   3.687639412317383*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"x", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", "#", "]"}], "\[Equal]", "525"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.687640202915004*^9, 3.687640330521771*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "f", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{
+         RowBox[{"3", "*", "x"}], "+", "1"}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"EvenQ", "[", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}], "+", 
+   RowBox[{
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"x", "/", "2"}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"EvenQ", "[", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "&"}]}], "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.687623345315933*^9, 3.687623660972534*^9}, {
+  3.6876237696228037`*^9, 3.687623771727178*^9}, {3.687623948750867*^9, 
+  3.68762394962208*^9}, {3.687625520146929*^9, 3.687625528473365*^9}, {
+  3.687625574698325*^9, 3.6876255928609753`*^9}, {3.6876256289144163`*^9, 
+  3.6876256723423758`*^9}, {3.687625842076737*^9, 3.687625887156642*^9}, {
+  3.68762592865143*^9, 3.6876260276957808`*^9}, {3.6876260656942387`*^9, 
+  3.687626077885561*^9}, {3.687626115517544*^9, 3.687626135281398*^9}, {
+  3.687626342367886*^9, 3.687626430300186*^9}, {3.687626656406062*^9, 
+  3.687626758513245*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "[", "13", "]"}]], "Input",
+ CellChangeTimes->{{3.687625602052245*^9, 3.687625604751528*^9}, {
+  3.687625835282942*^9, 3.687625838785718*^9}, {3.687625981522644*^9, 
+  3.687625983128105*^9}, {3.687626410212737*^9, 3.687626411086627*^9}, {
+  3.6876265657191267`*^9, 3.6876265838937473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"40", "+", 
+  RowBox[{
+   RowBox[{"{", "}"}], "\[LeftDoubleBracket]", "2", 
+   "\[RightDoubleBracket]"}]}]], "Output",
+ CellChangeTimes->{
+  3.687625605696796*^9, 3.6876256427642*^9, 3.687625674527378*^9, {
+   3.687625839350099*^9, 3.687625861293941*^9}, 3.6876258951588717`*^9, 
+   3.687625943596311*^9, 3.687625984099847*^9, {3.6876260187815437`*^9, 
+   3.687626030433091*^9}, 3.687626088370026*^9, 3.687626378674423*^9, {
+   3.6876264115262127`*^9, 3.687626434511406*^9}, 3.6876265687903757`*^9, {
+   3.6876267112993507`*^9, 3.6876267626684647`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{28, Automatic}, {36, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 884, 11, 327, "Input"],
+Cell[1445, 33, 265, 8, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1735, 45, 633, 11, 32, "Input"],
+Cell[2371, 58, 475, 9, 32, "Output"]
+}, Open  ]],
+Cell[2861, 70, 753, 18, 32, "Input"],
+Cell[3617, 90, 294, 9, 32, "Input"],
+Cell[3914, 101, 58, 1, 32, "Input"],
+Cell[3975, 104, 1408, 36, 54, "Input"],
+Cell[CellGroupData[{
+Cell[5408, 144, 318, 5, 32, "Input"],
+Cell[5729, 151, 576, 11, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
