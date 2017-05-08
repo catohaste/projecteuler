@@ -6,10 +6,11 @@ function [ isp ] = isprime2(X)
 
 if ~isreal(X) || floor(X) ~= X || iscell(X)
   error(message('MATLAB:isprime:InputNotPosInt')); 
-end
-isp = false;
-if X > 2^32
+elseif X > 2^32
     error(message('MATLAB:isprime:InputOutOfRange'));
+elseif X < 0
+    isp = false;
+    return
 end
 
 p = primes(sqrt(X));
@@ -21,9 +22,7 @@ isp = all(rem(X, p(p<X)));
 % we need to correct isp for this case.
 isp(X==1 | X==0) = false;
 
-if X < 0
-    isp = false;
-end
+
 
 end
 
