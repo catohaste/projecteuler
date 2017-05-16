@@ -1,0 +1,243 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8584,        233]
+NotebookOptionsPosition[      8212,        216]
+NotebookOutlinePosition[      8568,        232]
+CellTagsIndexPosition[      8525,        229]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<The first two consecutive numbers to have two distinct \
+prime factors are:\n\n14=2\[Times]7\n15=3\[Times]5\n\nThe first three \
+consecutive numbers to have three distinct prime factors are:\n\n644=2\.b2\
+\[Times]7\[Times]23\n645=3\[Times]5\[Times]43\n646=2\[Times]17\[Times]19.\n\n\
+Find the first four consecutive integers to have four distinct prime factors \
+each. What is the first of these numbers?\>\""], "Input",
+ CellChangeTimes->{{3.70393300490909*^9, 3.7039330422870893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "100", "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Intersection", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FactorInteger", "[", "#", "]"}], "\[LeftDoubleBracket]", 
+            
+            RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"FactorInteger", "[", "#", "]"}], "]"}]}], "}"}]}], 
+          "]"}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FactorInteger", "[", 
+             RowBox[{"#", "+", "1"}], "]"}], "\[LeftDoubleBracket]", 
+            RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"FactorInteger", "[", 
+               RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}]}], "]"}]}], 
+        "]"}], "\[Equal]", 
+       RowBox[{"{", "}"}]}], "&&", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"FactorInteger", "[", "#", "]"}], "]"}], "\[Equal]", "2"}], "&&", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"FactorInteger", "[", 
+         RowBox[{"#", "+", "1"}], "]"}], "]"}], "\[Equal]", "2"}]}], "&"}]}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6876211933953667`*^9, 3.687621281911005*^9}, {
+  3.687621357645763*^9, 3.687621544323735*^9}, {3.6876217368559732`*^9, 
+  3.6876217516743937`*^9}, {3.687621960057706*^9, 3.687621961862952*^9}, {
+  3.703932955719911*^9, 3.7039329590222588`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "1000", "]"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Intersection", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FactorInteger", "[", "#", "]"}], "\[LeftDoubleBracket]", 
+            
+            RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"FactorInteger", "[", "#", "]"}], "]"}]}], "}"}]}], 
+          "]"}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FactorInteger", "[", 
+             RowBox[{"#", "+", "1"}], "]"}], "\[LeftDoubleBracket]", 
+            RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"FactorInteger", "[", 
+               RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FactorInteger", "[", 
+             RowBox[{"#", "+", "2"}], "]"}], "\[LeftDoubleBracket]", 
+            RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"FactorInteger", "[", 
+               RowBox[{"#", "+", "2"}], "]"}], "]"}]}], "}"}]}], "]"}]}], 
+        "]"}], "\[Equal]", 
+       RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "&&", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"FactorInteger", "[", "#", "]"}], "]"}], "\[Equal]", "3"}], 
+      "\[IndentingNewLine]", "&&", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"FactorInteger", "[", 
+         RowBox[{"#", "+", "1"}], "]"}], "]"}], "\[Equal]", "3"}], 
+      "\[IndentingNewLine]", "&&", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"FactorInteger", "[", 
+         RowBox[{"#", "+", "2"}], "]"}], "]"}], "\[Equal]", "3"}]}], "&"}]}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.687621565952577*^9, 3.6876216679747057`*^9}, {
+   3.687621758145228*^9, 3.6876217631648083`*^9}, {3.6876219736131783`*^9, 
+   3.6876219978281918`*^9}, 3.7039330496459084`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", "200000", "]"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Intersection", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FactorInteger", "[", "#", "]"}], "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "[", 
+             RowBox[{"FactorInteger", "[", "#", "]"}], "]"}]}], "}"}]}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FactorInteger", "[", 
+            RowBox[{"#", "+", "1"}], "]"}], "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "[", 
+             RowBox[{"FactorInteger", "[", 
+              RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FactorInteger", "[", 
+            RowBox[{"#", "+", "2"}], "]"}], "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "[", 
+             RowBox[{"FactorInteger", "[", 
+              RowBox[{"#", "+", "2"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FactorInteger", "[", 
+            RowBox[{"#", "+", "3"}], "]"}], "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "[", 
+             RowBox[{"FactorInteger", "[", 
+              RowBox[{"#", "+", "3"}], "]"}], "]"}]}], "}"}]}], "]"}]}], 
+       "]"}], "\[Equal]", 
+      RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "&&", 
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"FactorInteger", "[", "#", "]"}], "]"}], "\[Equal]", "4"}], 
+     "\[IndentingNewLine]", "&&", 
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"FactorInteger", "[", 
+        RowBox[{"#", "+", "1"}], "]"}], "]"}], "\[Equal]", "4"}], 
+     "\[IndentingNewLine]", "&&", 
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"FactorInteger", "[", 
+        RowBox[{"#", "+", "2"}], "]"}], "]"}], "\[Equal]", "4"}], 
+     "\[IndentingNewLine]", "&&", 
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"FactorInteger", "[", 
+        RowBox[{"#", "+", "3"}], "]"}], "]"}], "\[Equal]", "4"}]}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6876220457062073`*^9, 3.687622103627098*^9}}]
+},
+WindowSize->{808, 755},
+WindowMargins->{{130, Automatic}, {-41, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 505, 6, 285, "Input"],
+Cell[1066, 28, 1774, 45, 96, "Input"],
+Cell[2843, 75, 2451, 62, 159, "Input"],
+Cell[5297, 139, 2911, 75, 201, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

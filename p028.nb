@@ -1,0 +1,177 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5780,        167]
+NotebookOptionsPosition[      5447,        151]
+NotebookOutlinePosition[      5801,        167]
+CellTagsIndexPosition[      5758,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<Starting with the number 1 and moving to the right in a \
+clockwise direction a 5 by 5 spiral is formed as follows:\n\n\!\(\*
+StyleBox[\"21\",
+FontColor->RGBColor[1, 0, 0]]\) 22 23 24 \!\(\*
+StyleBox[\"25\",
+FontColor->RGBColor[1, 0, 0]]\)\n20  \!\(\*
+StyleBox[\"7\",
+FontColor->RGBColor[1, 0, 0]]\)  8  \!\(\*
+StyleBox[\"9\",
+FontColor->RGBColor[1, 0, 0]]\) 10\n19  6  \!\(\*
+StyleBox[\"1\",
+FontColor->RGBColor[1, 0, 0]]\)  2 11\n18  \!\(\*
+StyleBox[\"5\",
+FontColor->RGBColor[1, 0, 0]]\)  4  \!\(\*
+StyleBox[\"3\",
+FontColor->RGBColor[1, 0, 0]]\) 12\n\!\(\*
+StyleBox[\"17\",
+FontColor->RGBColor[1, 0, 0]]\) 16 15 14 \!\(\*
+StyleBox[\"13\",
+FontColor->RGBColor[1, 0, 0]]\)\n\nIt can be verified that the sum of the \
+numbers on the diagonals is 101.\n\nWhat is the sum of the numbers on the \
+diagonals in a 1001 by 1001 spiral formed in the same way?\>\""], "Input",
+ CellChangeTimes->{{3.7039318553293533`*^9, 3.703931866788303*^9}, {
+  3.703931959544186*^9, 3.703931968355867*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sideLen", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"for", " ", "side", " ", "length", " ", "2", " ", "and", " ", 
+    RowBox[{"up", ".", "\[IndentingNewLine]", "Add"}], " ", "1", " ", "at", 
+    " ", "the", " ", "end"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xmax", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "/", "2"}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"sideLen", "+", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "2"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "xmax"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"UR", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"4", "*", 
+          RowBox[{"i", "^", "2"}]}], " ", "-", 
+         RowBox[{"4", "*", "i"}], " ", "+", "1"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"LR", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"4", "*", 
+          RowBox[{"i", "^", "2"}]}], "-", 
+         RowBox[{"10", "*", "i"}], "+", "7"}]}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"LL", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"4", "*", 
+          RowBox[{"i", "^", "2"}]}], "-", 
+         RowBox[{"8", "*", "i"}], "+", "5"}]}], ",", "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{"UL", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"4", "*", 
+          RowBox[{"i", "^", "2"}]}], "-", 
+         RowBox[{"6", "*", "i"}], "+", "3"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x", "+=", " ", 
+       RowBox[{
+       "UR", " ", "+", " ", "LR", " ", "+", "LL", " ", "+", " ", "UL"}]}], 
+      ";"}]}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"x", "+=", " ", "1"}]}], "Input",
+ CellChangeTimes->{{3.687529020633728*^9, 3.687529125584962*^9}, {
+  3.687529671793912*^9, 3.6875299548927927`*^9}, {3.687530033619054*^9, 
+  3.687530039984923*^9}, {3.6875301448380203`*^9, 3.687530206329822*^9}, {
+  3.6875302698485413`*^9, 3.6875302782151937`*^9}, {3.6875310504873962`*^9, 
+  3.6875311182099447`*^9}, {3.7039314067951117`*^9, 3.703931493143572*^9}, {
+  3.7039315664222927`*^9, 3.703931570760334*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sideLen", "=", "1001"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xmax", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "/", "2"}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"sideLen", "+", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "xmax", "]"}], ",", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Total", "[", 
+   RowBox[{"Join", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"4", "*", 
+       RowBox[{"n", "^", "2"}]}], " ", "-", 
+      RowBox[{"4", "*", "n"}], " ", "+", "1"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"4", "*", 
+       RowBox[{"n", "^", "2"}]}], " ", "-", 
+      RowBox[{"10", "*", "n"}], " ", "+", " ", "7"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"4", "*", 
+       RowBox[{"n", "^", "2"}]}], "-", 
+      RowBox[{"8", "*", "n"}], "+", "5"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"4", "*", 
+       RowBox[{"n", "^", "2"}]}], "-", 
+      RowBox[{"6", "*", "n"}], "+", "3"}]}], "]"}], "]"}], " ", "+", 
+  "1"}]}], "Input",
+ CellChangeTimes->{{3.6875307951539583`*^9, 3.687530798856359*^9}, {
+  3.687530839294633*^9, 3.687530842117571*^9}, {3.6875309310670433`*^9, 
+  3.687530942049725*^9}, {3.703931527701489*^9, 3.703931532013707*^9}, {
+  3.70393159974953*^9, 3.703931599983313*^9}}]
+},
+WindowSize->{808, 755},
+WindowMargins->{{30, Automatic}, {29, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1004, 23, 285, "Input"],
+Cell[1565, 45, 2398, 61, 264, "Input"],
+Cell[3966, 108, 1477, 41, 180, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
